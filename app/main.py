@@ -12,8 +12,8 @@ def calculate_profit(name: str) -> None:
             res["earned_money"] += (
                 to_decimal(data["sold"]) - to_decimal(data["bought"])
             ) * to_decimal(data["matecoin_price"])
-            res["matecoin_account"] += (to_decimal(data["bought"]) -
-                                        to_decimal(data["sold"]))
+            res["matecoin_account"] += (
+                to_decimal(data["bought"]) - to_decimal(data["sold"]))
         profit = {"earned_money": f"{res['earned_money']}",
                   "matecoin_account": f"{res['matecoin_account']}"}
         with open("profit.json", "w") as f:
